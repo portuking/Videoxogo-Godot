@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="reino_de_eldria"
+run/main_scene="res://menú_principal.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1408
+window/size/viewport_height=736
 
 [physics]
 

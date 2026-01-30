@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://42o683qupb3u"]
+
+[ext_resource type="Texture2D" uid="uid://wcvojgwcvltu" path="res://pantalla-principal.png" id="1_ga2cg"]
+[ext_resource type="Texture2D" uid="uid://bwckx22mqqwou" path="res://boton-jugar.png" id="2_v0lul"]
+[ext_resource type="Texture2D" uid="uid://btiijg84rug0n" path="res://boton-jugar-pulsado.png" id="3_v0lul"]
+[ext_resource type="Texture2D" uid="uid://cijov611k5nu1" path="res://boton-opciones.png" id="4_yt5ow"]
+[ext_resource type="Texture2D" uid="uid://b7u14rfjxtbjg" path="res://boton-opciones-pulsado.png" id="5_2sy60"]
+
+[node name="Menú Principal" type="Control" unique_id=1175502426]
+custom_minimum_size = Vector2(1408, 736)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=250947862]
+custom_minimum_size = Vector2(1408, 736)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ga2cg")
+
+[node name="Botones" type="VBoxContainer" parent="Fondo" unique_id=1447263909]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.72727275
+anchor_top = 0.5027174
+anchor_right = 0.50923294
+offset_right = 691.0
+offset_bottom = 726.0
+theme_override_constants/separation = 7
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Boton-Jugar" type="TextureButton" parent="Fondo/Botones" unique_id=267789277]
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("2_v0lul")
+texture_pressed = ExtResource("3_v0lul")
+
+[node name="Boton-Opciones" type="TextureButton" parent="Fondo/Botones" unique_id=1585981054]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("4_yt5ow")
+texture_pressed = ExtResource("5_2sy60")
