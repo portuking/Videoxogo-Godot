@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dh1ge2f1ta7ra"]
+
+[ext_resource type="Script" uid="uid://db58l2rurha6u" path="res://pantalla_carga.gd" id="1_cct1u"]
+[ext_resource type="Texture2D" uid="uid://cbs05gtytegwj" path="res://imagenes/fondos/fondo-pantalla-de-carga.png" id="2_8eckg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cct1u"]
+bg_color = Color(0.6, 0.156, 0.156, 1)
+
+[node name="Pantalla Carga" type="Control" unique_id=1857072798]
+custom_minimum_size = Vector2(1402, 786)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cct1u")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=1618613619]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 31.0
+offset_right = 1410.0
+offset_bottom = 813.0
+texture = ExtResource("2_8eckg")
+
+[node name="barra-carga" type="ProgressBar" parent="Fondo" unique_id=385883480]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 179.0
+offset_top = 583.0
+offset_right = 1247.0
+offset_bottom = 643.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_cct1u")
+
+[node name="texto" type="Label" parent="Fondo/barra-carga" unique_id=1763292296]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 450.0
+offset_top = 72.0
+offset_right = 473.0
+offset_bottom = 115.0

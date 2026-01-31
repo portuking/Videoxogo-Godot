@@ -53,3 +53,8 @@ func _on_boton_musica_si_pressed():
 	else:
 		nodo_boton.texture_normal = img_musica_no
 		$%musica.playing = false
+
+func _on_boton_jugar_pressed():
+	# Cambia la ruta entre comillas por la ruta real de tu escena de carga
+	# Puedes arrastrar el archivo de la escena desde abajo hasta aquí para que se escriba sola
+	get_tree().change_scene_to_file("res://escenas/pantalla_carga.tscn")

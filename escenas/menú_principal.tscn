@@ -117,8 +117,10 @@ texture_normal = ExtResource("16_fp8ms")
 [node name="musica" type="AudioStreamPlayer" parent="Fondo" unique_id=412095308]
 unique_name_in_owner = true
 stream = ExtResource("17_h1k37")
+autoplay = true
 parameters/looping = true
 
+[connection signal="pressed" from="Fondo/Botones/Boton-Jugar" to="." method="_on_boton_jugar_pressed"]
 [connection signal="pressed" from="Fondo/Botones/Boton-Opciones" to="." method="_on_boton_opciones_pressed"]
 [connection signal="pressed" from="Fondo/Botones/Boton-Salir" to="." method="_on_boton_salir_pressed"]
 [connection signal="pressed" from="Fondo/Fondo-Ajustes/menu_opciones/Boton-Musica" to="." method="_on_boton_musica_si_pressed"]
