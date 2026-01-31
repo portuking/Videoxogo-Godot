@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ctmgxg63c1l3s"]
 
 [ext_resource type="Texture2D" uid="uid://n1ufw3wt3ho4" path="res://imagenes/fondos/pantalla-principal.png" id="1_7n020"]
+[ext_resource type="Script" uid="uid://dqib16qrrpykt" path="res://escenas/principal/menú_principal.gd" id="1_p45em"]
 [ext_resource type="Texture2D" uid="uid://boc7pin62mvcx" path="res://imagenes/botones/boton-jugar.png" id="2_7n020"]
 [ext_resource type="Texture2D" uid="uid://cn8hjfjryek45" path="res://imagenes/botones/boton-jugar-pulsado.png" id="3_xloll"]
 [ext_resource type="Texture2D" uid="uid://dqf8irtmts36e" path="res://imagenes/botones/boton-jugar-hover.png" id="4_0fjnw"]
@@ -11,6 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://cj8u68cgi1lcu" path="res://imagenes/botones/boton-salir-presionado.png" id="9_h1k37"]
 [ext_resource type="Texture2D" uid="uid://m6ggr80k3il3" path="res://imagenes/botones/boton-salir-hover.png" id="10_frpru"]
 [ext_resource type="Texture2D" uid="uid://bsmj7sbh8x3rp" path="res://imagenes/textos/titulo-juego.png" id="11_xloll"]
+[ext_resource type="Texture2D" uid="uid://bvspbcusotvva" path="res://imagenes/fondos/fondo-ajustes.png" id="13_h1k37"]
+[ext_resource type="Texture2D" uid="uid://cvrk8x33oqyor" path="res://imagenes/botones/boton-musica-si.png" id="14_frpru"]
+[ext_resource type="Texture2D" uid="uid://78k2ofllkmvv" path="res://imagenes/botones/boton-ajustes.png" id="15_5uoxn"]
+[ext_resource type="Texture2D" uid="uid://c66qou12ox5k0" path="res://imagenes/botones/boton-cerrar.png" id="16_fp8ms"]
+[ext_resource type="AudioStream" uid="uid://bisrgs70coud1" path="res://musica/musica.mp3" id="17_h1k37"]
 
 [node name="Menú Principal" type="Control" unique_id=1175502426]
 custom_minimum_size = Vector2(1408, 736)
@@ -20,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_p45em")
 metadata/_edit_use_anchors_ = true
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=250947862]
@@ -66,7 +73,7 @@ texture_normal = ExtResource("8_p45em")
 texture_pressed = ExtResource("9_h1k37")
 texture_hover = ExtResource("10_frpru")
 
-[node name="TextureRect" type="TextureRect" parent="Fondo" unique_id=98541594]
+[node name="Titulo" type="TextureRect" parent="Fondo" unique_id=98541594]
 layout_direction = 3
 layout_mode = 0
 offset_left = 479.0
@@ -74,3 +81,45 @@ offset_top = -73.0
 offset_right = 979.0
 offset_bottom = 427.0
 texture = ExtResource("11_xloll")
+
+[node name="Fondo-Ajustes" type="TextureRect" parent="Fondo" unique_id=1807696495]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -391.0
+offset_top = -3.0
+offset_right = 1109.0
+offset_bottom = 765.0
+mouse_filter = 2
+texture = ExtResource("13_h1k37")
+
+[node name="menu_opciones" type="VBoxContainer" parent="Fondo/Fondo-Ajustes" unique_id=1286951759]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 604.0
+offset_top = 80.0
+offset_right = 980.0
+offset_bottom = 690.0
+mouse_filter = 0
+
+[node name="Boton-Musica" type="TextureButton" parent="Fondo/Fondo-Ajustes/menu_opciones" unique_id=652404352]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("14_frpru")
+
+[node name="Boton-Ajustes" type="TextureButton" parent="Fondo/Fondo-Ajustes/menu_opciones" unique_id=1467224551]
+layout_mode = 2
+texture_normal = ExtResource("15_5uoxn")
+
+[node name="Boton-Cerrar" type="TextureButton" parent="Fondo/Fondo-Ajustes/menu_opciones" unique_id=222084914]
+layout_mode = 2
+texture_normal = ExtResource("16_fp8ms")
+
+[node name="musica" type="AudioStreamPlayer" parent="Fondo" unique_id=412095308]
+unique_name_in_owner = true
+stream = ExtResource("17_h1k37")
+parameters/looping = true
+
+[connection signal="pressed" from="Fondo/Botones/Boton-Opciones" to="." method="_on_boton_opciones_pressed"]
+[connection signal="pressed" from="Fondo/Botones/Boton-Salir" to="." method="_on_boton_salir_pressed"]
+[connection signal="pressed" from="Fondo/Fondo-Ajustes/menu_opciones/Boton-Musica" to="." method="_on_boton_musica_si_pressed"]
+[connection signal="pressed" from="Fondo/Fondo-Ajustes/menu_opciones/Boton-Cerrar" to="." method="_on_boton_cerrar_pressed"]
